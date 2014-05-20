@@ -7,14 +7,6 @@
 
 local MouselockIndicatorPixel = {}
 
-local function print(...)
-	local out = {...}
-	for i,v in ipairs(out) do
-		out[i] = tostring(v)
-	end
-	Print(table.concat(out, ", "))
-end
-
 function MouselockIndicatorPixel:Init()
 	Apollo.RegisterAddon(self)
 end
