@@ -4,12 +4,7 @@
 
 -- Lets WildstarMouselockRebind simulate alternate bindings when GameLib.IsMouseLockOn() is true
 
-
 local MouselockIndicatorPixel = {}
-
-function MouselockIndicatorPixel:Init()
-	Apollo.RegisterAddon(self)
-end
 
 function MouselockIndicatorPixel:OnLoad()
 	self.xml = XmlDoc.CreateFromFile("MouselockIndicatorPixel.xml")
@@ -24,4 +19,4 @@ function MouselockIndicatorPixel:Pulse()
 	self.wndPixels:SetBGColor(GameLib.IsMouseLockOn() and green or black)
 end
 
-MouselockIndicatorPixel:Init()
+Apollo.RegisterAddon(MouselockIndicatorPixel)
