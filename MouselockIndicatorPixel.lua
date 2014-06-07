@@ -16,8 +16,7 @@ function MouselockIndicatorPixel:OnLoad()
 	self.wndPixels = Apollo.LoadForm("MouselockIndicatorPixel.xml", "MouselockIndicatorPixels", "InWorldHudStratum", self)
 	self.wndPixels:Show(true)
 	
-	Apollo.CreateTimer("MouselockIndicatorPixelPulse", 0.2, true)
-	Apollo.RegisterTimerHandler("MouselockIndicatorPixelPulse", "Pulse", self)
+	self.timer = ApolloTimer.Create(0.1, true, "Pulse", self)
 end
 
 local green, black = CColor.new(0, 1, 0, 1), CColor.new(0, 0, 0, 1)
